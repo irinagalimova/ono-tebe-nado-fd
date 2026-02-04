@@ -13,7 +13,7 @@
   display: grid;
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
-  padding: 89px 52px 96px 50px;
+  padding: 89px 52px 93px 50px;
 }
 
 .header__logo {
@@ -29,23 +29,27 @@
 .header__menu-list {
   display: flex;
   justify-content: flex-start;
-  gap: 12px;
+  gap: 10px;
   list-style: circle inside; /* для выравнивания по PixelPerfect. Из доки inside делает маркер частью содержимого элемента списка */
 }
 
-.header__address {
+.address {
   display: flex;
   flex-direction: column;
-  justify-self: end;
   align-items: flex-start;
+  font-style: normal;
+}
+
+.header__address {
+  justify-self: end;
   max-width: 236px;
+  font-style: normal;
 }
 
 .address-text {
   font-family: Raleway, sans-serif;
   font-weight: normal;
   font-size: 18px;
-  font-style: normal;
   line-height: 1.35;
 }
 
@@ -56,13 +60,13 @@
 }
 
 .header__menu-item_active {
-  text-decoration: none;
   list-style: none;
 }
 
-.header__menu-item_active .header__menu-link {
+.header__menu-link_active {
   text-decoration: none;
 }
+
 .cover {
   position: relative;
   min-height: 757px;
@@ -77,17 +81,19 @@
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
+  z-index: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.cover__text {
+  display: flex;
+  flex-direction: column;
+  gap: 106px;
+}
+
 .cover__title {
-  position: absolute;
-  top: 165px;
-  right: 50px;
-  left: 50px;
   z-index: 2;
   font-family: Raleway, sans-serif;
   font-weight: bold;
@@ -108,24 +114,21 @@
 .text-right {
   display: block;
   margin-top: 20px;
-  margin-right: 0.3em;
+  margin-left: 0.3em;
   text-align: right;
+  white-space: nowrap;
 }
 
 .without-last-letter {
-  display: inline-block;
+  display: inline;
 }
 
 .last_letter {
-  margin-right: -0.3em; /* Компенсировать letter-spacing */
+  display: inline;
   letter-spacing: 0;
 }
 
 .description {
-  position: absolute;
-  top: 655px;
-  right: 50px;
-  left: 50px;
   z-index: 2;
   display: flex;
   justify-content: space-between;
@@ -137,16 +140,12 @@
   text-transform: uppercase;
 }
 
-.word-ws90 {
+.word-ws-large {
   margin-right: 0.9em;
 }
 
-.word-ws80 {
+.word-ws-middle {
   margin-right: 0.8em;
-}
-
-.word-ws110 {
-  margin-right: 1.1em;
 }
 
 .button {
@@ -171,9 +170,7 @@
 
 .lots__title {
   margin-left: 40px;
-}
-
-.content-section__title {
+  font-family: Raleway, sans-serif;
   font-weight: bold;
   font-size: 40px;
   font-style: normal;
@@ -185,35 +182,29 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  row-gap: 30px;
   list-style: none;
 }
 
 .lots__list-item {
-  z-index: -1;
+  z-index: 0;
   width: 334px;
   height: auto;
-  min-height: 100px;
+  min-height: 596px;
+  background-position: center;
+  background-size: cover;
 }
 
-.lots__list-item:first-child {
-  /*первый дочерний элемент */
+.anderson {
   background-image: url("../images/card-lot-01.jpg");
-  background-position: center;
-  background-size: cover;
 }
 
-.lots__list-item:nth-child(2) {
-  /*второй дочерний элемент */
+.joyce {
   background-image: url("../images/card-lot-02.jpg");
-  background-position: center;
-  background-size: cover;
 }
 
-.lots__list-item:last-child {
-  /*последний дочерний элемент */
+.kandinskiy {
   background-image: url("../images/card-lot-03.jpg");
-  background-position: center;
-  background-size: cover;
 }
 
 .lots__list-item a {
@@ -278,16 +269,22 @@
   height: 240px;
 }
 
-.about__title h2 {
+.about__title h2 { 
   margin-top: 11px;
   margin-left: 25px;
+  font-family: Raleway, sans-serif;
+  font-weight: bold;
+  font-size: 40px;
+  font-style: normal;
+  line-height: 1.175;
+  text-transform: uppercase;
 }
 
 .about__text {
   display: flex;
   flex-direction: column;
   row-gap: 24px;
-  margin-top: 11px;
+  margin-top: 8px;
   margin-left: 25px;
 }
 
@@ -299,11 +296,9 @@
 }
 
 .footer__address {
-  display: flex;
-  flex-direction: column;
   justify-self: start;
-  align-items: flex-start;
   max-width: 264px;
+  font-style: normal;
 }
 
 .footer__menu-list {
@@ -328,6 +323,7 @@
   gap: 48px;
   list-style: none;
 }
+
 .footer__link-image {
   width: 48px;
   height: 48px;
