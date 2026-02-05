@@ -259,7 +259,7 @@
   align-items: center;
   width: 240px;
   height: 240px;
-  border-radius: 300px;
+  border-radius: 50%;
   padding: 62.25px 47.56px 62px 50.89px;
   background-color: black;
 }
